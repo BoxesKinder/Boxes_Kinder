@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kinder Cases</title>
+
+    <a style="color: rgb(255, 240, 240); text-decoration-line:overline; font-size: 30px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" href="./inventory.html">Инвентарь</a>
+    <a style="color: rgb(255, 240, 240); text-decoration-line:overline; font-size: 30px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" href="./settings.html">Настройки</a>
+
+    <style>
+
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 28px;
+            padding: 12px 30px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 320px;
+            height: 320px;
+            object-fit: contain;
+
+            margin-top: 30px;
+
+            border: 5px solid white;
+            border-radius: 20px;
+
+            background: #2c2c2c;
+        }
+
+        #nameText {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        #collectionText {
+            font-size: 22px;
+            color: gray;
+        }
+
+        .rare {
+            border-color: gold;
+            box-shadow: 0 0 30px gold;
+        }
+
+        .common {
+            border-color: white;
+            box-shadow: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Kinder Case 🎁</h1>
+
+    <button onclick="openCase()">OPEN</button>
+
+    <br>
+
+    <img id="rewardImage">
+
+    <div id="nameText"></div>
+
+    <div id="collectionText"></div>
+
+    <p id="text"></p>
+
+
+
+<script>
+
+
+
+
+
+// ===== COMMON ITEMS =====
+
+let commonItems = [
+
+    {
+        image: "images/velociraptor.png",
+        name: "Velociraptor",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/triceratops.png",
+        name: "Triceratops",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+    {
+        image: "images/trexskeleton.png",
+        name: "T-Rex skeleton",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/tarta.png",
+        name: "Tarta",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/tapiro.png",
+        name: "Tapiro",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+           {
+        image: "images/suricato.png",
+        name: "Suricato",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+    {
+        image: "images/stormtrooper.png",
+        name: "Storm trooper",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+{
+        image: "images/stiggy.png",
+        name: "Stiggy",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+           {
+        image: "images/spiderman.png",
+        name: "Spiderman",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/sinoceratops.png",
+        name: "Sinoceratops",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/rey.png",
+        name: "Rey",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+    {
+        image: "images/rabbit.png",
+        name: "Rabbit",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/puzzola.png",
+        name: "Puzzola",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/pteranodon.png",
+        name: "Pteranodon",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+           {
+        image: "images/princessleia.png",
+        name: "Princess Leia",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+    {
+        image: "images/pinguino.png",
+        name: "Pinguino",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+{
+        image: "images/parasaurus.png",
+        name: "Parasaurus",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+           {
+        image: "images/orsopolare.png",
+        name: "Orso-Polare",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+    {
+        image: "images/obiwan.png",
+        name: "Obi-Wan",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/motorcycle2.png",
+        name: "Motorcycle",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/motorcycle1.png",
+        name: "Motorcycle",
+        collection: "wc",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/monstertruck.png",
+        name: "Monstertruck",
+        collection: "wc",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/monkeycatapultgreen.png",
+        name: "Monkey katapult",
+        collection: "wc",
+        rarity: "common"
+    },
+
+           {
+        image: "images/luke.png",
+        name: "Luke",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+    {
+        image: "images/kyloren.png",
+        name: "Kylo Ren",
+        collection: "Star wars",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/koala.png",
+        name: "Koala",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+    {
+        image: "images/indoraptor.png",
+        name: "Indoraptor",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/indominius.png",
+        name: "Indominius",
+        collection: "Jurassic park",
+        rarity: "common"
+    },
+
+           {
+        image: "images/hulk.png",
+        name: "Hulk",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/hoistyellow.png",
+        name: "Hoist",
+        collection: "wc",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/hoistgreen.png",
+        name: "Hoist",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/hippopotamo.png",
+        name: "Hippopotamo",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+
+{
+        image: "images/bobafatt.png",
+        name: "Bobafatt",
+        collection: "starwars",
+        rarity: "common"
+    },
+
+           {
+        image: "images/gigantosaurus.png",
+        name: "Gigantosaurus",
+        collection: "Jurassic Park",
+        rarity: "common"
+    },
+
+    {
+        image: "images/ghostspider.png",
+        name: "Ghost spider (Gwen)",
+        collection: "marvel",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/frog.png",
+        name: "Frog",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/formula1red.png",
+        name: "Formula 1",
+        collection: "wc",
+        rarity: "common"
+    },
+
+{
+        image: "images/formula1blue.png",
+        name: "Formula 1",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/fishorange.png",
+        name: "Fish",
+        collection: "wc",
+        rarity: "common"
+    },
+
+
+    {
+        image: "images/fishblue.png",
+        name: "Fish",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/elephante.png",
+        name: "Elephante",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+    {
+        image: "images/drstrange.png",
+        name: "Dr Strange",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/dragon.png",
+        name: "Dragon",
+        collection: "wc",
+        rarity: "common"
+    },
+
+       {
+        image: "images/dilophosaurus.png",
+        name: "Dilophosaurus",
+        collection: "Jurassic Park",
+        rarity: "common"
+    },
+
+    {
+        image: "images/crocodilo.png",
+        name: "Crocodilo",
+        collection: "Natoons",
+        rarity: "common"
+    },
+    
+    {
+        image: "images/colorspinnerdolfins.png",
+        name: "Color spinner",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/colorspinnerswans.png",
+        name: "Color spinner",
+        collection: "wc",
+        rarity: "common"
+    },
+
+           {
+        image: "images/chewbecca.png",
+        name: "Chewbecca",
+        collection: "Star wars",
+        rarity: "common"
+    },
+       
+{
+        image: "images/cebriatto.png",
+        name: "Cebriatto",
+        collection: "Natoons",
+        rarity: "common"
+    },
+
+    {
+        image: "images/car6.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+    
+    {
+        image: "images/car5.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/car4.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+
+           {
+        image: "images/car3.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+
+       {
+        image: "images/car1.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/bulldozeryellow.png",
+        name: "Bulldozer",
+        collection: "wc",
+        rarity: "common"
+    },
+    
+    {
+        image: "images/bulldozerorange.png",
+        name: "Bulldozer",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/bobafatt.png",
+        name: "Bobafatt",
+        collection: "starwars",
+        rarity: "common"
+    },
+
+           {
+        image: "images/blackpanter.png",
+        name: "Black panter",
+        collection: "marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/antman.png",
+        name: "Antman",
+        collection: "marvel",
+        rarity: "common"
+    },
+
+
+       {
+        image: "images/animalfamilyswans.png",
+        name: "Animal family",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/animalfamilyturtles.png",
+        name: "Animal family",
+        collection: "wc",
+        rarity: "common"
+    },
+
+{
+        image: "images/darthvaider.png",
+        name: "Darth Vader",
+        collection: "Star Wars",
+        rarity: "common"
+    },
+
+    {
+        image: "images/yoda.png",
+        name: "Yoda",
+        collection: "Star Wars",
+        rarity: "common"
+    },
+
+
+    {
+        image: "images/antman.png",
+        name: "Antman",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/ironman.png",
+        name: "Iron Man",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/spiderman.png",
+        name: "Spiderman",
+        collection: "Marvel",
+        rarity: "common"
+    },
+
+    {
+        image: "images/car2.png",
+        name: "Car",
+        collection: "wc",
+        rarity: "common"
+    },
+
+    {
+        image: "images/trex.png",
+        name: "T-Rex",
+        collection: "Jurassic Park",
+        rarity: "common"
+    }
+    
+
+];
+
+
+
+// ===== RARE ITEMS =====
+
+let rareItems = [
+
+
+
+];
+
+
+
+// ===== OPEN CASE =====
+
+         let score = 20;
+         let canOpen = true
+
+function openCase() {
+    
+      if (!canOpen) {
+        return;
+    }
+
+    canOpen = false;
+
+    // Через 1 секунду знову дозволяємо відкривати
+    setTimeout(() => {
+        canOpen = true;
+    }, 1000);
+
+    if (score > 0) {
+        score--;
+
+        document.getElementById("text").innerText =
+            "Количество обычных ящиков: " + score;
+
+    } else {
+
+        document.getElementById("text").innerText =
+            "Лимит на количество открытых ящиков исчерпан. Пожалуйста, подождите 15 минут";
+
+        return;
+    }
+
+
+    let item;
+
+    // 20% шанс на rare
+    if (Math.random() < 0.20) {
+
+        let randomRare =
+            Math.floor(Math.random() * rareItems.length);
+
+        item = rareItems[randomRare];
+
+    }
+
+    else {
+
+        let randomCommon =
+            Math.floor(Math.random() * commonItems.length);
+
+        item = commonItems[randomCommon];
+    }
+
+
+
+    // IMAGE
+
+    let image = document.getElementById("rewardImage");
+
+    image.src = item.image;
+
+
+
+    // NAME
+
+    document.getElementById("nameText").innerText =
+        item.name;
+
+
+
+    // COLLECTION
+
+    document.getElementById("collectionText").innerText =
+        item.collection;
+
+
+
+    // RARITY EFFECT
+
+    image.classList.remove("rare");
+    image.classList.remove("common");
+
+    image.classList.add(item.rarity);
+}
+    
+
+</script>
+
+</body>
+</html>
